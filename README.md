@@ -58,17 +58,56 @@ Be sure that the file move.bash has execution rights (chmod +x move.bash)
 ![Exploring the bash script file](RDS_Trajectory_step3.png)
 ![Running the bash script file](RDS_Trajectory_step4.png)
 
-### b. Executing a trajectory with a phyton file
-With the Phyton script you can add a sequence of points to the trajectory before publishing it to the trajectory command topic.
+### b. Executing a trajectory with a python file
+With the Python script you can add a sequence of points to the trajectory before publishing it to the trajectory command topic.
 Open in the IDE the file simulation_ws/src/ros/scorbot_joint/scripts/joint_animation_prueba.py and check how the process is done 
-for phyton. Check if this .py file has execution rights, if not add it by the command 'chmod +x joint_animation_prueba.py' 
-To execute the phyton script you have to run this command in the shell:
+for python. Check if this .py file has execution rights, if not add it by the command 'chmod +x joint_animation_prueba.py' 
+To execute the python script you have to run this command in the shell:
 
 rosrun scorbot_joint joint_animation_prueba.py
 
 You will see the robot moving from point to point in the gazebo window and the state of the joints in numerical values in the shell 
 window:
 
-![Running the a phyton script file with a trajectory of several points](RDS_Trajectory_phyton.png)
+![Running the a python script file with a trajectory of several points](RDS_Trajectory_python.png)
+
+# 1.2. Position control
+The robot joints can be controlled through individual controllers, but this option is not enabled by default in the scorbot.lauch file. Before startin the gazebo simulation environment you must do the following change to the scorbot.launch file:
+
+- Open /simulation_ws/src/ros/scorbot_gazebo/scorbot.lauch with IDE and go to line 7, and set to false the option " <arg name="trajectory_controller" default="false"/>". Now the argument "trajectory_controller" will be able to launch position controllers or trajectory ones because the following lines are set like: 
+- Go to line 37 (scorbot.launch):
+   <!-- Use individual controllers -->
+    <node unless="$(arg trajectory_controller)" ....
+- And line 46 (scorbot.launch):
+    <!-- Use trajectory controllers -->
+    <node if="$(arg trajectory_controller)" ...
+Save the changes to scorbot.launch file and open the scorbot.launch simulation of scorbot_gazebo folder as done previously.
+Now open with IDE the example .py file 'simple_mover_scorbot.py' and check that now there is a publish command per joint position.
+To run the script ensure the it has execution rights and run the command:
+
+rosrun scorbot_joint simple_mover_scorbot.py
+
+![Running the a python script file using the position controller](RDS_Position_python.png)
+
+# 1.3. Effort control
+A modified version of the /simulation_ws/src/ros scorbot is in the folder /simulation_ws/src/scorbot_ervii for the effort control. In this case several changes has been made to .launch, .yalm, .urdf files mainly. A script to run an example is also provided. Section 2 explains this controller with more details.
+
+To open the simulation effort controller environment select the scrobot_effort.launch from the scorbot_gazebo_effort folder when you click the simulations button.
+
+![Opening the Effort Gazebo simulation](RDS_Effort_python_step1.png)
+![Opening the Effort Gazebo simulation](RDS_Effort_python_step2.png)
+
+Once opened the simulation environment, it can be seen that the gravity affect the robot because there is no home position control yet.
+
+Open with IDE the simulation_ws/src/scorbot_ervii/scorbot_joint_effort/scorbot_effort_mover_demo.py and check how the messages are now published in the effort topics.
+To run the script make sure that the .py file has execution rights.
+
+rosrun scorbot_joint_effort scorbot_effort_mover_demo.py
+
+And to check the current status of the joints you can run in another shell:
+
+rostopic echo /scorbot/joint_states
+
+![Running the Effort Gazebo simulation Python example](RDS_Effort_python_step2.png)
 
 # 2. Scrobot Gazebo Effort
