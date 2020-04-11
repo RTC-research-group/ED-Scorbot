@@ -23,13 +23,13 @@ your own Linux computer.
 
 These two main simulation scenarios are divided in two different folders: scorbot_gazebo_effort and RDS_files
 
-# RDS_files
+# 1. RDS_files
 This is a backup copy of the /home/user/ folder of the on-line virtual machine from RDS (https://www.theconstructsim.com/rds-ros-development-studio/)
 
 In this VM we copied and adapted the scorbot ERVII gazebo project from https://github.com/rorromr/scorbot 
 This project was oriented to trajectory control of the joints. We added the position and effort controllers.
 
-## Trajectory control
+## 1.1. Trajectory control
 To execute this controller on the RDS virutal machine, you have to open (or fork if you wish to make your own changes) the machine 
 http://www.rosject.io/l/11c04055/ . You can also create a new one from scratch and add the files of RDS_files folder to your /home/user 
 folder. It has been tested with Linux 16.04 and Gazebo 7. Once the VM is running, go to the Simulations Menu and click on "choose launch 
@@ -40,7 +40,7 @@ file" button. Select the "scorbot_gazebo" section and the scorbot.launch file of
 
 From menu "Tools" open a Shell windows and the IDE to explore files.
 
-### Executing a trajectory with console commands
+### a. Executing a trajectory with console commands
 
 In the IDE open the file "simulation_ws/src/ros/move.bash"
 This command file is running the rostopic command to publish a trajectory message with only one point in the topic
@@ -58,7 +58,7 @@ Be sure that the file move.bash has execution rights (chmod +x move.bash)
 ![Exploring the bash script file](RDS_Trajectory_step3.png)
 ![Running the bash script file](RDS_Trajectory_step4.png)
 
-### Executing a trajectory with a phyton file
+### b. Executing a trajectory with a phyton file
 With the Phyton script you can add a sequence of points to the trajectory before publishing it to the trajectory command topic.
 Open in the IDE the file simulation_ws/src/ros/scorbot_joint/scripts/joint_animation_prueba.py and check how the process is done 
 for phyton. Check if this .py file has execution rights, if not add it by the command 'chmod +x joint_animation_prueba.py' 
@@ -71,4 +71,4 @@ window:
 
 ![Running the a phyton script file with a trajectory of several points](RDS_Trajectory_phyton.png)
 
-# Scrobot Gazebo Effort
+# 2. Scrobot Gazebo Effort
