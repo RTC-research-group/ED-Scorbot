@@ -23,13 +23,13 @@ your own Linux computer.
 
 These two main simulation scenarios are divided in two different folders: scorbot_gazebo_effort and RDS_files
 
-#RDS_files
+# RDS_files
 This is a backup copy of the /home/user/ folder of the on-line virtual machine from RDS (https://www.theconstructsim.com/rds-ros-development-studio/)
 
 In this VM we copied and adapted the scorbot ERVII gazebo project from https://github.com/rorromr/scorbot 
 This project was oriented to trajectory control of the joints. We added the position and effort controllers.
 
-##Trajectory control
+## Trajectory control
 To execute this controller on the RDS virutal machine, you have to open (or fork if you wish to make your own changes) the machine 
 http://www.rosject.io/l/11c04055/ . You can also create a new one from scratch and add the files of RDS_files folder to your /home/user 
 folder. It has been tested with Linux 16.04 and Gazebo 7. Once the VM is running, go to the Simulations Menu and click on "choose launch 
@@ -71,4 +71,4 @@ window:
 
 ![Running the a phyton script file with a trajectory of several points](RDS_Trajectory_phyton.png)
 
-#Scrobot Gazebo Effort
+# Scrobot Gazebo Effort
