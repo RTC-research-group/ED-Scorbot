@@ -51,15 +51,6 @@
         trajectory_controller
         "/>
 
-<!--
-    <node pkg="pid" name="autotune" type="autotune">
-       <remap from="input" to="/scorbot/roll_effort_controller/state/process_value"/>
-       <remap from="output" to="/scorbot/autotune"/>
-       <remap from="input" to="/scorbot/roll_effort_controller/command/data"/>
-       <remap from="output" to="/scorbot/autotune"/>
-     </node>
--->
-
   </group>
 
 </launch>

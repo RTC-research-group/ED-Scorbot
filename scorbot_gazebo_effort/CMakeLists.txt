@@ -127,14 +127,14 @@ include_directories(
 ## either from message generation or dynamic reconfigure
 # add_dependencies(scorbot_gazebo ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-## Declare a C++ executable
-#add_executable(autotune_base script/autotune_base.cpp)
+## Declare a C++ executable. For example a program called "autotune_base.cpp":
+#add_executable(script/autotune_base.cpp)
 
-## Add cmake target dependencies of the executable
+## Add cmake target dependencies of the executable. For example a program called "autotune_base.cpp":
 ## same as for the library above
 #add_dependencies(autotune_base ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-## Specify libraries to link a library or executable target against
+## Specify libraries to link a library or executable target against. For example a program called "autotune_base.cpp":
 #target_link_libraries(autotune_base
 #   ${catkin_LIBRARIES}
 # )

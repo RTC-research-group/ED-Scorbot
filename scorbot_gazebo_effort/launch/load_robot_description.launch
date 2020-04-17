@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <launch>
     <!-- Name for parameter URDF, default robot_description -->
     <arg name="description_name" default="robot_description" />
@@ -8,3 +9,4 @@
         name="$(arg description_name)"
         command="$(find xacro)/xacro '$(find scorbot_gazebo_effort)/urdf/scorbot.urdf.xacro' fixed:=$(arg fixed)" />
 </launch>
+
