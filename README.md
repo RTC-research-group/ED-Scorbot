@@ -101,7 +101,7 @@ This model source files are under the folder scorbot_gazebo_effort of this repo.
 
 A demo video has been uploaded in this repo at: 
 
-![Demo video] (Scorbot-Gazebo-Effort_demo.mp4)
+https://github.com/RTC-research-group/ED-Scorbot/blob/master/Scorbot-Gazebo-Effort_demo.mp4
 
 # 2. The jAER interface for the ED-Scorbot
-For the real ED-Scorbot a jAER filter has been programmed for sending joint references to the internal spike-based PID controllers implemented in the FPGAs. The jAER folder contains the java file, a screen-shot of the software interface and a demonstration video for a simple trajectory.  
+For the real ED-Scorbot a jAER filter has been programmed for sending joint references to the internal spike-based PID controllers implemented in the FPGAs. The jAER folder contains the java file, a screen-shot of the software interface and a demonstration video for a simple trajectory (https://github.com/RTC-research-group/ED-Scorbot/blob/master/jaer/video_and_3D_reconstruction_ScanAllMotors.mp4).  
