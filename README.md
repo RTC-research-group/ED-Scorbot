@@ -1,5 +1,6 @@
 # ED-Scorbot
 Event-based Scorbot ER-VII
+
 CHIST-ERA SMALL project (2020-2023)
 
 SMALL investigates options for learning in low-power unconventional hardware that is based on spiking neural networks (SNNs) 
@@ -8,100 +9,7 @@ paradigm combines the three most promising avenues for minimizing energy consump
 
 This repo is devoted to that robotics environment. The ED-Scorbot is an event-driven controlled robotic arm. The robot has been adapted for being controlled through spike-based controllers. More info can be obtained at http://www.rtc.us.es/ed-scorbot 
 
-For this project, a simulation scenario is being developed for ROS. In this repo you can find two different implementations: one compatible to RDS (Robotic Development Studio, available throgh this link: http://www.rosject.io/l/11c04055/ ), and another that can be executed in your own Linux computer.
-
-These two main simulation scenarios are divided in two different folders: scorbot_gazebo_effort and RDS_files
-
-# 1. RDS_files
-This is a backup copy of the /home/user/ folder of the on-line virtual machine from RDS (https://www.theconstructsim.com/rds-ros-development-studio/ ) that can be accessed through this link: https://rds.theconstructsim.com/r/f1f5acf20521/my_rosject_for_small/
-
-In this VM we copied and adapted the scorbot ERVII gazebo project from https://github.com/rorromr/scorbot 
-This project was oriented to trajectory control of the joints. We added the position and effort controllers.
-
-## 1.1. Trajectory control
-To execute this controller on the RDS virutal machine, you have to open (or fork if you wish to make your own changes) the machine 
-http://www.rosject.io/l/11c04055/ . You can also create a new one from scratch and add the files of RDS_files folder to your /home/user folder. It has been tested with Linux 16.04 and Gazebo 7. Once the VM is running, go to the Simulations Menu and click on "choose launch file" button. Select the "scorbot_gazebo" section and the scorbot.launch file of this section, like next figures:
-
-![Open Gazebo simulations menu](RDS_Trajectory_step1.png)
-![Open Gazebo simulation Scorbot_gazebo scorbot.lauch file](RDS_Trajectory_step2.png)
-
-From menu "Tools" open a Shell windows and the IDE to explore files.
-
-### a. Executing a trajectory with console commands
-
-In the IDE open the file "simulation_ws/src/ros/move.bash"
-This command file is running the rostopic command to publish a trajectory message with only one point in the topic
-/scorbot/trajectory_controller/command
-The message expected has the common format trajectory_msgs/Joint_trajectory
-Each time the command is called to publish a message, the joint angles of the robot are modified. Their joint angles are specified in 
-radians.
-
-To execute the trajectory with this sequence of published messages one by one we have to run the shell:
-
-bash ./move.bash
-
-Be sure that the file move.bash has execution rights (chmod +x move.bash)
-
-![Exploring the bash script file](RDS_Trajectory_step3.png)
-![Running the bash script file](RDS_Trajectory_step4.png)
-
-### b. Executing a trajectory with a python file
-With the Python script you can add a sequence of points to the trajectory before publishing it to the trajectory command topic.
-Open in the IDE the file simulation_ws/src/ros/scorbot_joint/scripts/joint_animation_prueba.py and check how the process is done 
-for python. Check if this .py file has execution rights, if not add it by the command 'chmod +x joint_animation_prueba.py' 
-To execute the python script you have to run this command in the shell:
-
-rosrun scorbot_joint joint_animation_prueba.py
-
-You will see the robot moving from point to point in the gazebo window and the state of the joints in numerical values in the shell 
-window:
-
-![Running the a python script file with a trajectory of several points](RDS_Trajectory_python.png)
-
-# 1.2. Position control
-The robot joints can be controlled through individual controllers, but this option is not enabled by default in the scorbot.lauch file. Before startin the gazebo simulation environment you must do the following change to the scorbot.launch file:
-
-- Open /simulation_ws/src/ros/scorbot_gazebo/scorbot.lauch with IDE and go to line 7, and set to false the option " <arg name="trajectory_controller" default="false"/>". Now the argument "trajectory_controller" will be able to launch position controllers or trajectory ones because the following lines are set like: 
-- Go to line 37 (scorbot.launch):
-   <!-- Use individual controllers -->
-    <node unless="$(arg trajectory_controller)" ....
-- And line 46 (scorbot.launch):
-    <!-- Use trajectory controllers -->
-    <node if="$(arg trajectory_controller)" ...
-Save the changes to scorbot.launch file and open the scorbot.launch simulation of scorbot_gazebo folder as done previously.
-Now open with IDE the example .py file 'simple_mover_scorbot.py' and check that now there is a publish command per joint position.
-To run the script ensure the it has execution rights and run the command:
-
-rosrun scorbot_joint simple_mover_scorbot.py
-
-![Running the a python script file using the position controller](RDS_Position_python.png)
-
-# 1.3. Scorbot Effort control
-A modified version of the /simulation_ws/src/ros scorbot is in the folder /simulation_ws/src/scorbot_ervii for the effort control. In this case several changes has been made to .launch, .yalm, .urdf files mainly. A script to run an example is also provided. Section 2 explains this controller with more details.
-
-To open the simulation effort controller environment select the scrobot_effort.launch from the scorbot_gazebo_effort folder when you click the simulations button.
-
-![Opening the Effort Gazebo simulation](RDS_Effort_python_step1.png)
-![Opening the Effort Gazebo simulation](RDS_Effort_python_step2.png)
-
-Once opened the simulation environment, it can be seen that the gravity affect the robot because there is no home position control yet.
-
-Open with IDE the simulation_ws/src/scorbot_ervii/scorbot_joint_effort/scorbot_effort_mover_demo.py and check how the messages are now published in the effort topics.
-To run the script make sure that the .py file has execution rights.
-
-rosrun scorbot_joint_effort scorbot_effort_mover_demo.py
-
-And to check the current status of the joints you can run in another shell:
-
-rostopic echo /scorbot/joint_states
-
-![Running the Effort Gazebo simulation Python example](RDS_Effort_python_step2.png)
-
-This model source files are under the folder scorbot_gazebo_effort of this repo. A pdf file is available that documents this model and its use: https://github.com/RTC-research-group/ED-Scorbot/blob/master/scorbot_gazebo_effort/README.pdf 
-
-A demo video has been uploaded in this repo at: 
-
-https://github.com/RTC-research-group/ED-Scorbot/blob/master/Scorbot-Gazebo-Effort_demo.mp4
+For this project, a simulation scenario is being developed for ROS. In Simulator folder you can find two different implementations: one compatible to RDS (Robotic Development Studio, available throgh this link: http://www.rosject.io/l/11c04055/ ), and another that can be executed in your own Linux computer.
 
 # 2. Software interfaces for the ED-Scorbot
 
@@ -117,5 +25,6 @@ The ED-Scorbot is being used for SNN training. For that we are collecting this t
 - AEDAT file with internal spiking activity of the six SPID controllers with a sequence of AE and the timestamp of each capture. The AE has 6 bits: from bit 5 to bit 0 they are Source1-Source0-Joint2-Joint1-Joint0-Polarity, being Source1-Source0 meaning the source of the spike ("00" for the output of the spike generator that converts the digital spike-reference to spiking activity; "01" for the SPID output; "10" for the SPID input; and "11" for the integral of the spiking encoder activity. Joint2 − Joint0 encode the joint number; and bit0 for the polarity of the captured spike.
 - MP4 videos for the X, Y and Z view of the robot while it performs the trajectory.
 
-
 These trajectories can be downloaded from a link provided after contacting by email with the authors: {scanas, epinerof, alinares}@us.es
+
+A recent collection with Lemniscate trajectories is available in this repo: https://github.com/RTC-research-group/LemniscateEDScobotDS 
