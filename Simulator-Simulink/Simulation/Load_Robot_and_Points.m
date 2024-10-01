@@ -1,5 +1,5 @@
 %% LOAD ROBOT
-EDScorbot = importrobot('EDScorbot_Arm_2.slx');
+EDScorbot = importrobot('EDScorbot_Arm.slx');
 
 %% SQUARE POINTS
 % This is the set of points of a square path
