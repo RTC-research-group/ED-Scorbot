@@ -8,4 +8,6 @@ The ED-Scorbot is being used for SNN training. For that we are collecting this t
 - MP4 videos for the X, Y and Z view of the robot while it performs the trajectory.
 
 
-These trajectories can be downloaded from a link provided after contacting by email with the authors: {scanas, epinerof, alinares}@us.es
+These trajectories can be downloaded from a link provided after contacting by email with the authors (alinares@us.es)
+
+A recent collection with Lemniscate trajectories is available in this repo: https://github.com/RTC-research-group/LemniscateEDScobotDS 

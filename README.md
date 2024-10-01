@@ -1,4 +1,4 @@
-# ED-Scorbot
+# 1. ED-Scorbot
 Event-based Scorbot ER-VII
 
 CHIST-ERA SMALL project (2020-2023)
@@ -10,6 +10,8 @@ paradigm combines the three most promising avenues for minimizing energy consump
 This repo is devoted to that robotics environment. The ED-Scorbot is an event-driven controlled robotic arm. The robot has been adapted for being controlled through spike-based controllers. More info can be obtained at http://www.rtc.us.es/ed-scorbot 
 
 For this project, a simulation scenario is being developed for ROS. In Simulator folder you can find two different implementations: one compatible to RDS (Robotic Development Studio, available throgh this link: http://www.rosject.io/l/11c04055/ ), and another that can be executed in your own Linux computer.
+
+Furthermore, a MATLAB/Simulink simulation scenario is provided at Simulator-Simulink folder.
 
 # 2. Software interfaces for the ED-Scorbot
 
@@ -25,6 +27,6 @@ The ED-Scorbot is being used for SNN training. For that we are collecting this t
 - AEDAT file with internal spiking activity of the six SPID controllers with a sequence of AE and the timestamp of each capture. The AE has 6 bits: from bit 5 to bit 0 they are Source1-Source0-Joint2-Joint1-Joint0-Polarity, being Source1-Source0 meaning the source of the spike ("00" for the output of the spike generator that converts the digital spike-reference to spiking activity; "01" for the SPID output; "10" for the SPID input; and "11" for the integral of the spiking encoder activity. Joint2 − Joint0 encode the joint number; and bit0 for the polarity of the captured spike.
 - MP4 videos for the X, Y and Z view of the robot while it performs the trajectory.
 
-These trajectories can be downloaded from a link provided after contacting by email with the authors: {scanas, epinerof, alinares}@us.es
+These trajectories can be downloaded from a link provided after contacting by email with the authors (linares@us.es)
 
 A recent collection with Lemniscate trajectories is available in this repo: https://github.com/RTC-research-group/LemniscateEDScobotDS 
