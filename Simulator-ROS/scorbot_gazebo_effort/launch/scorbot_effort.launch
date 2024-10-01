@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <!-- Arguments -->
+  <arg name="use_gui" default="true"/>
+  <param name="use_gui" value="$(arg use_gui)" />
+  <!-- Controller type (individual_controller vs trajectory_controller) -->
+  <arg name="individual_controller" default="true"/>
+  <!-- Publish /clock -->
+  <arg name="use_sim_time" value="true"/>
+  <!-- Fix base to World, publish TF for /world frame -->
+  <arg name="fixed" default="true"/>
+ 
+  <!-- Gazebo -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg use_gui)"/>
+    <arg name="verbose" value="true"/>
+  </include>
+
+  <group ns="scorbot">
+    <!-- Load the URDF into the ROS Parameter Server -->
+    <include file="$(find scorbot_gazebo_effort)/launch/load_robot_description.launch">
+      <arg name="fixed" value="true"/>
+    </include>
+
+    <!-- Add URDF in Gazebo  -->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model Scorbot_ER-VII -param /scorbot/robot_description"/>
+    <!-- TF from joint states -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+      <param name="tf_prefix" value="/scorbot" />
+    </node>
+
+    <!-- Controllers-->
+    <!-- Load joint controller configurations from YAML file to parameter server -->
+    <rosparam file="$(find scorbot_gazebo_effort)/config/controllers.yaml" command="load"/>
+    <!-- Use individual controllers -->
+    <node if="$(arg individual_controller)" name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+          args="joint_state_controller
+        base_effort_controller
+        shoulder_effort_controller
+        elbow_effort_controller
+        pitch_effort_controller
+        roll_effort_controller
+        gripper_finger_left_effort_controller
+        gripper_finger_right_effort_controller
+        "/>
+
+    <!-- Use trajectory controllers -->
+    <node unless="$(arg individual_controller)" name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+          args="joint_state_controller
+        trajectory_controller
+        "/>
+
+  </group>
+
+</launch>
