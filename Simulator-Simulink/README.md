@@ -38,11 +38,10 @@ Inside the ED-Scorbot repository in Matlab live, go to the path: ***/Simulator-S
 
 ## 2. Perform simulation:
 
-### Step 1: 
-Execute the file ***Load_Robot_and_Points.m*** this file will load the robot in the workspace as well as the trajectories to be performed.
+#### Step 1: Execute the file ***Load_Robot_and_Points.m*** this file will load the robot in the workspace as well as the trajectories to be performed.
 
-### Step 2: 
-Open the file corresponding to the controller this could be: ***EDScorbot_IJC_2DOF_PID.slx*** or ***EDCorbot_CTC_Control.slx***, once inside the selected file change the value of the ***Set*** block with **1** or **0**, this will allow it to activate one of the two trajectory generators. 
+#### Step 2: Open the file corresponding to the controller this could be: ***EDScorbot_IJC_2DOF_PID.slx*** or ***EDCorbot_CTC_Control.slx***.
+Once inside the selected file change the value of the ***Set*** block with **1** or **0**, this will allow it to activate one of the two trajectory generators. 
 
 - To generate a square trajectory: ***Set*** = 1 and set 7.5s as simulation time.
 - To generate a lemniscate trajectory: ***Set*** = 0 and set 10s as simulation time.
