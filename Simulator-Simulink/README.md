@@ -47,7 +47,7 @@ Once inside the selected file change the value of the ***Set*** block with **1**
 - To generate a lemniscate trajectory: ***Set*** = 0 and set 10s as simulation time.
 
 ## 3. Result graphs:
-Once the simulation of the Simulink file has been carried out, we proceed to go to the Matlab environment where we will execute the file corresponding to the simulation carried out with one of the two types of control. 
+After running the simulation, we proceed to go to the Matlab environment where we will execute the file corresponding to the simulation carried out with one of the two types of control. 
       
 a. If the Simulink simulation was done with the ***EDScorbot_IJC_2DOF.slx*** file, the ***IJC_Graphics.m*** file must be run. 
       
