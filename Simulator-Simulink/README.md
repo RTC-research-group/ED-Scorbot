@@ -1,7 +1,7 @@
 # Simulation of the ED-Scorbot by Simulink
 
-This repository is oriented to perform the simulation of the
-EDScorbot with Matlab and Simulink.
+**This repository is oriented to perform the simulation of the
+EDScorbot with Matlab and Simulink.**
 
 **To perform the simulation, follow the steps below:**
 
