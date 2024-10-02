@@ -27,7 +27,7 @@ Inside the ED-Scorbot repository in Matlab live, go to the path: ***/Simulator-S
  #### Step 2: Modify the following Simulink files:
 
    - #### EDScorbot_Arm.slx: 
-       Inside this file you have to modify the following blocks: **base**, **body**, **upper_arm**, **forearm**, **flange**, **gripper_base_link**, **gripper_finger_right** and **gripper_finger_left**. Once inside the element, look for the ***visual*** block where the path to its respective STL file must be changed. This must be done for each element. 
+       Inside this file you have to modify the following blocks: **base**, **body**, **upper_arm**, **forearm**, **flange**, **gripper_base_link**, **gripper_finger_right** and **gripper_finger_left**. Once inside the element, look for the ***visual*** block where the path where the respective STL file is stored must be entered. Remember that these STL files are located in the STL-files folder previously downloaded.
     
    - #### EDScorbot_IJC_2DOF_PID.slx:
       Inside this file, you must place the block called Scorbot. Once inside this block, modify the path of the STL files corresponding to the elements of the robot, as was done in ***EDScorbot_Arm.slx***.
