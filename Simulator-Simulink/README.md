@@ -19,7 +19,7 @@ When entering the link Matlab suggests saving the repository as
 Inside the ED-Scorbot repository in Matlab live, go to the path: ***/Simulator-Simulink/Simulation***. Here are all the files needed to run the simulations.
 
 ### b. Matlab is installed on the computer: 
- #### Step 1: Download the file folders:
+ #### Step 1: Download the following folders from the repository ED-Scorbot/Simulator-Simulink:
    
    - **STL-files:** contains the parts of the EDScorbot in STL format.
   
