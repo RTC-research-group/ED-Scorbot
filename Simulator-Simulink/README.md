@@ -27,7 +27,7 @@ Inside the ED-Scorbot repository in Matlab live, go to the path: ***/Simulator-S
  #### Step 2: Modify the following Simulink files:
 
    - #### EDScorbot_Arm.slx: 
-       Inside this file you have to modify the following blocks: **base**, **body**, **upper_arm**, **forearm**, **flange**, **gripper_base_link**, **gripper_finger_right** and **gripper_finger_left**. Once inside the element, look for the block ***visual***, and inside this block, put the path where the respective STL file is stored. Remember that these STL files are located in the ***STL-files*** folder previously downloaded.
+       Inside this file you have to modify the following blocks: **base**, **body**, **upper_arm**, **forearm**, **flange**, **gripper_base_link**, **gripper_finger_right** and **gripper_finger_left**. Once inside the element, look for the block ***visual***, and inside this block, put the path where the respective STL file is stored. Remember that these STL files are in the previously downloaded ***STL-files*** folder.
     
    - #### EDScorbot_IJC_2DOF_PID.slx:
       Inside this file, you must place the block called Scorbot. Once inside this block, modify the path of the STL files corresponding to the elements of the robot, as was done in ***EDScorbot_Arm.slx***.
@@ -38,9 +38,9 @@ Inside the ED-Scorbot repository in Matlab live, go to the path: ***/Simulator-S
 
 ## 2. Perform simulation:
 
-#### Step 1: Execute the file ***Load_Robot_and_Points.m*** this file will load the robot in the workspace as well as the trajectories to be performed.
+#### Step 1: Execute the file ***Load_Robot_and_Points.m*** this file will load the robot in the workspace and the trajectories.
 
-#### Step 2: Open the file corresponding to the controller this could be: ***EDScorbot_IJC_2DOF_PID.slx*** or ***EDCorbot_CTC_Control.slx***.
+#### Step 2: Open the file corresponding to the controller: ***EDScorbot_IJC_2DOF_PID.slx*** or ***EDCorbot_CTC_Control.slx***.
 Once inside the selected file change the value of the ***Set*** block with **1** or **0**, this will allow it to activate one of the two trajectory generators. 
 
 - To generate a square trajectory: ***Set*** = 1 and set 7.5s as simulation time.
@@ -49,7 +49,7 @@ Once inside the selected file change the value of the ***Set*** block with **1**
 ## 3. Result graphs:
 After running the simulation, we proceed to go to the Matlab environment where we will execute the file corresponding to the simulation carried out with one of the two types of control. 
       
-a. If the Simulink simulation was done with the ***EDScorbot_IJC_2DOF.slx*** file, the ***IJC_Graphics.m*** file must be run. 
+a. If the Simulink simulation was done with the ***EDScorbot_IJC_2DOF_PID.slx*** file, the ***IJC_Graphics.m*** file must be run. 
       
 b. If the Simulink simulation was done with the ***EDCorbot_CTC_Control.slx*** file, the ***CTC_Graphics.m*** file must be run.
       
