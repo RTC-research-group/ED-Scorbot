@@ -101,6 +101,6 @@ This model source files are under the folder scorbot_gazebo_effort of this repo.
 
 A demo video has been uploaded in this repo at: 
 
-https://github.com/RTC-research-group/ED-Scorbot/blob/master/Scorbot-Gazebo-Effort_demo.mp4
+https://github.com/RTC-research-group/ED-Scorbot/blob/master/Simulator-ROS/Scorbot-Gazebo-Effort_demo.mp4
 
 
