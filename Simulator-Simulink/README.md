@@ -14,7 +14,7 @@ EDScorbot with Matlab and Simulink.**
        https://matlab.mathworks.com/open/github/v1?repo=RTC-research-group/ED-Scorbot&project=https://github.com/RTC-research-group/ED-Scorbot/tree/master/Simulator-Simulink 
 
 
-When entering the link Matlab suggests saving the repository as 
+When entering the link Matlab suggests saving the repository as
 ***/MATLAB Drive/Repositories/ED-Scorbot***. Save it that way.
 Inside the ED-Scorbot repository in Matlab live, go to the path: ***/Simulator-Simulink/Simulation***. Here are all the files needed to run the simulations.
 
