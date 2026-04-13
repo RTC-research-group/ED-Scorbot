@@ -20,7 +20,7 @@ axis_const = 'x';             % rotation: "x", "y" or "z"
 pts_step = 8;                 % points between base points
 
 % Lemniscate settings
-nPointsLem = 50;              % points of the lemniscate
+nPointsLem = 100;              % points of the lemniscate
 a = 0.25;                     % Lemniscata scale
 rot_select = 4;               % select 1,2,3 or 4 to rotate mode
 
@@ -244,7 +244,7 @@ view(3);
 grid on;
 axis([-0.5 0.8 -0.4 0.5 0 0.8]);
 xlabel('X'); ylabel('Y'); zlabel('Z');
-title('Simulación de trayectoria');
+title('Trajectory simulation');
 show(robot, jointsPos(1,:), 'PreservePlot', false, 'Frames', 'on');
 view(125, 30);
 trajectoryPlot = animatedline('Color', 'r', 'LineWidth', 1);
@@ -266,7 +266,6 @@ end
 rotate3d on;
 hold off;
 
-%% Simulation Conditions
-disp('----- SIMULATION CONDITIONS -----');
+disp('----- CONDITIONS -----');
 disp(['number of points in the trajectory: ', num2str(length(trajectory)-1)/trajReps]);
 disp(['Distance between points: ', num2str(step), ' cm']);
