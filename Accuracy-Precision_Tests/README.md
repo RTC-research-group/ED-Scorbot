@@ -7,6 +7,11 @@
 ## Trajectories
 
 <p align="center">
-    <img src="images/square.png" width="45%" />
-    <img src="images/lemniscate.png" width="45%" />
+  <img src="images/square.png" width="45%" />
+  <a href="images/square.fig">Download FIG</a>
+</p>
+
+<p align="center">
+  <img src="images/lemniscate.png" width="45%" /><br>
+  <a href="images/lemniscate.fig">Download FIG</a>
 </p>
