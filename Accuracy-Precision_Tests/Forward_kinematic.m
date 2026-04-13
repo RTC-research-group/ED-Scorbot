@@ -1,5 +1,12 @@
 %clc
 %clear
+
+%{
+ “This script is used to obtain the forward kinematic equations 
+  for the ED-Scorbot, with the objective of calculating the Cartesian 
+  positions of the end-effector in the workspace.” 
+%} 
+
 addpath("functions");
 syms q1 q2 q3 q4 alpha1 alpha2 alpha3 alpha4 d1 d2 d3 d4 a1 a2 a3 a4;
 
@@ -29,7 +36,11 @@ disp(Py);
 disp(Pz);
 
 %% Denavit-Hartenberg (D-H) parameters
-q1= 0; q2=0; q3=0; q4=0;
+% ideal home position 
+% q1= 0; q2=0; q3=0; q4=0;
+% ED-Scorbot home position
+q1= 0.411898; q2=-0.383972; q3=0.20944; q4=0;
+
 alpha1=-pi/2;          alpha2=0;         alpha3=0;          alpha4=0;
 d1=0.3585;             d2=-0.098;        d3=0.065;          d4=0;
 a1=0.05;               a2=0.3;           a3=0.25;           a4=0.22;  
