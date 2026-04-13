@@ -7,7 +7,7 @@ of the Neuromorphic Robotic Arm ED-Scorbot
     This repository contains scripts and tools developed to evaluate the performance of the ED-Scorbot neuromorphic robotic arm through accuracy and precision tests. The aim is to analyse the system’s ability to reach specific positions and consistently repeat movements when executing reference trajectories.
 </p>
 
-<h2 align="center">Trajectories</h2>
+<h2 align="left">Trajectories</h2>
 
 <p align="center">
   <img src="images/square.png" width="45%" />
