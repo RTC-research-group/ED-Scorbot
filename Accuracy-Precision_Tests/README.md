@@ -1,4 +1,7 @@
-<h1 align="center">Accuracy and precision tests of the neuromorphic robotic arm ED-Scorbot</h1>
+<h1 align="center">
+Accuracy and Precision Tests<br>
+of the Neuromorphic Robotic Arm ED-Scorbot
+</h1>
 
 <p align="justify">
     This repository contains scripts and tools developed to evaluate the performance of the ED-Scorbot neuromorphic robotic arm through accuracy and precision tests. The aim is to analyse the system’s ability to reach specific positions and consistently repeat movements when executing reference trajectories.
